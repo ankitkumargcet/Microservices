@@ -21,8 +21,8 @@ public class MovieCatalogResource {
 	@Autowired
 	private RestTemplate restTemplate;
 
-	@RequestMapping("/{userId}")
-	List<CatalogItems> getCatalog(@PathVariable("userId") String userId) {
+	@RequestMapping("/v1/{userId}")
+	List<CatalogItems> getCatalogV1(@PathVariable("userId") String userId) {
 		
 		// Get all rated movie ID's
 		List<Rating> ratings = Arrays.asList(new Rating("1234", 4), new Rating("5678", 3));
@@ -33,9 +33,19 @@ public class MovieCatalogResource {
 		})
 		.collect(Collectors.toList());
 
+
+	}
+	
+	@RequestMapping("/v2/{userId}")
+	List<CatalogItems> getCatalogV2(@PathVariable("userId") String userId) {
+		
+		// Get all rated movie ID's
+
 		// For each movie ID, call movie info service and get details
 
 		// Put them all together
+		
+		return null;
 
 	}
 }
