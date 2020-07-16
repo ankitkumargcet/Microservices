@@ -11,10 +11,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Movie {
+public class Rating {
 
 	private String movieId;
-	private String movieName;
-	private String movieDescription;
+	private int rating;
 
 }
